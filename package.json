@@ -1,0 +1,23 @@
+{
+  "name": "dependency-vuln-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guilhermemarimzup/dependency-vuln-checker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guilhermemarimzup/dependency-vuln-checker/issues"
+  },
+  "homepage": "https://github.com/guilhermemarimzup/dependency-vuln-checker#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6"
+  }
+}
