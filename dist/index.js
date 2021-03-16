@@ -22,7 +22,7 @@ try {
 
         if (stdout !== null) {
 
-            exec("curl -fsSL https://github.com/jeremylong/DependencyCheck/releases/download/v6.1.2/dependency-check-6.1.2-release.zip -o dependency-check.zip && unzip -q dependency-check.zip && ./dependency-check/bin/dependency-check.sh -s ./pom.xml" , (error, stdout, stderr) => {
+            exec("curl -fsSL https://github.com/jeremylong/DependencyCheck/releases/download/v6.1.2/dependency-check-6.1.2-release.zip -o dependency-check.zip && unzip -q dependency-check.zip && ls -la && ./dependency-check/bin/dependency-check.sh -s pom.xml" , (error, stdout, stderr) => {
                 
                 if (error) {
                     console.log(`error: ${error.message}`);
