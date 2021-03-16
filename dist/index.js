@@ -24,7 +24,7 @@ try {
         }
     });
 
-    exec("find . -name 'package.json' ! -path './node_modules/*", (error, stdout, stderr) => {
+    exec("find . -name 'package.json' ! -path './node_modules/*'", (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;
