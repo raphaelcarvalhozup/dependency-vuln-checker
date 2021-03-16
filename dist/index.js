@@ -18,24 +18,14 @@ try {
             return;
         }
 
-        if (stderr) {
-            console.log(`stderr: ${stderr}`);
-            return;
-        }
+        console.log(stdout)
 
         if (stdout !== null) {
 
-            exec("curl -fsSL https://github.com/jeremylong/DependencyCheck/releases/download/v6.1.2/dependency-check-6.1.2-release.zip -o dependency-check.zip &&\
-            unzip -q dependency-check.zip &&\
-            ./dependency-check/bin/dependency-check.sh -s pom.xml &&\
-            ls -la" , (error, stdout, stderr) => {
+            exec("curl -fsSL https://github.com/jeremylong/DependencyCheck/releases/download/v6.1.2/dependency-check-6.1.2-release.zip -o dependency-check.zip && unzip -q dependency-check.zip && ./dependency-check/bin/dependency-check.sh -s pom.xml && ls -la" , (error, stdout, stderr) => {
                 
                 if (error) {
                     console.log(`error: ${error.message}`);
-                    return;
-                }
-                if (stderr) {
-                    console.log(`stderr: ${stderr}`);
                     return;
                 }
 
@@ -59,10 +49,8 @@ try {
             console.log(`error: ${error.message}`);
             return;
         }
-        if (stderr) {
-            console.log(`stderr: ${stderr}`);
-            return;
-        }
+
+        console.log(stdout);
 
         if (stdout !== null) {
 
@@ -70,10 +58,6 @@ try {
                 
                 if (error) {
                     console.log(`error: ${error.message}`);
-                    return;
-                }
-                if (stderr) {
-                    console.log(`stderr: ${stderr}`);
                     return;
                 }
 
@@ -86,6 +70,7 @@ try {
                 }
                 artifactClient.uploadArtifact(report, file, rootDirectory, options);
             })
+            
         }
     });
 
