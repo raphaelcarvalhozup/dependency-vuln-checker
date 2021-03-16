@@ -50,7 +50,7 @@ try {
 
         if (`${stdout}`.length != 0) {
 
-            exec("sudo npm install -g npm-audit-html && npm audit --json | npm-audit-html --output dependency-report.html", (error, stdout, stderr) => {
+            exec("sudo npm install && sudo npm i -g npm-audit-html && npm audit --json | npm-audit-html --output dependency-report.html", (error, stdout, stderr) => {
                 
                 if (error) {
                     console.log(`error: ${error.message}`);
