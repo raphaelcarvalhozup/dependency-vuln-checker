@@ -35,10 +35,11 @@ try {
                 console.log(`stderr: ${stderr}`);
                 return;
             }
+
             const artifactClient = artifact.create();
             const report = 'dependency-check-report';
             const rootDirectory = './'
-            const file = './dependency-report.html';
+            const file = ['./dependency-report.html'];
             const options = {
                 continueOnError: true
             }
