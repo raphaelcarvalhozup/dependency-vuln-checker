@@ -13,16 +13,12 @@ try {
 
         if (`${stdout}`.length != 0) {
 
-            exec("curl -fsSL https://github.com/jeremylong/DependencyCheck/releases/download/v6.1.2/dependency-check-6.1.2-release.zip -o dependency-check.zip" , (error, stdout, stderr) => {
+            exec("curl https://github.com/jeremylong/DependencyCheck/releases/download/v6.1.2/dependency-check-6.1.2-release.zip -o dependency-check.zip && unzip dependency-check.zip && ./dependency-check/bin/dependency-check.sh -s pom.xml" , (error, stdout, stderr) => {
                 
                 if (error) {
                     console.log(`error: ${error.message}`);
                     return;
                 }
-
-                exec("unzip -q dependency-check.zip");
-                exec("ls -la");
-                exec("./dependency-check/bin/dependency-check.sh -s pom.xml");
 
                 const artifactClient = artifact.create();
                 const report = 'dependency-check-report';
