@@ -26,7 +26,7 @@ try {
             console.log(`stderr: ${stderr}`);
             return;
         }
-        exec("npm install -g npm-audit-html && npm audit --json | npm-audit-html --output dependency-report.html", (error, stdout, stderr) => {
+        exec("sudo npm install -g npm-audit-html && npm audit --json | npm-audit-html --output dependency-report.html", (error, stdout, stderr) => {
             if (error) {
                 console.log(`error: ${error.message}`);
                 return;
