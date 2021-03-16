@@ -28,7 +28,7 @@ try {
         const artifactClient = artifact.create();
             const report = 'dependency-check-report';
             const rootDirectory = './'
-            const file = ['./dependency-report.html'];
+            const file = ['./dependency-check-report.html'];
             const options = {
                 continueOnError: true
             }
