@@ -18,9 +18,7 @@ try {
             return;
         }
 
-        console.log(`${stdout}`);
-
-        if (stdout !== null) {
+        if (`${stdout}`.length != 0) {
 
             exec("curl -fsSL https://github.com/jeremylong/DependencyCheck/releases/download/v6.1.2/dependency-check-6.1.2-release.zip -o dependency-check.zip" , (error, stdout, stderr) => {
                 
@@ -32,7 +30,7 @@ try {
                 exec("unzip -q dependency-check.zip");
                 exec("ls -la");
                 exec("./dependency-check/bin/dependency-check.sh -s pom.xml");
-                
+
                 const artifactClient = artifact.create();
                 const report = 'dependency-check-report';
                 const rootDirectory = './'
@@ -54,9 +52,7 @@ try {
             return;
         }
 
-        console.log(`${stdout}`);
-
-        if (stdout !== null) {
+        if (`${stdout}`.length != 0) {
 
             exec("sudo npm install -g npm-audit-html && npm audit --json | npm-audit-html --output dependency-report.html", (error, stdout, stderr) => {
                 
