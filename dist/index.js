@@ -84,6 +84,8 @@ try {
                         return;
                     }
 
+                    console.log(`${stdout}`);
+
                     exec("cat output.json | npm-audit-html --output dependency-report.html", (error, stdout, stderr) => { 
 
                         if (error) {
