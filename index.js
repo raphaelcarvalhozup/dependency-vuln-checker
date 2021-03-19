@@ -40,8 +40,10 @@ try {
 
                 console.log("> Generating your report...");
 
+                exec("ls" , (error, stdout, stderr) => { console.log(`${stdout}`)});
+
                 const artifactClient = artifact.create();
-                const report = 'dependency-check-report';
+                const report = 'dependency-report';
                 const rootDirectory = './'
                 const file = ['./dependency-check-report.html'];
                 const options = {
@@ -76,7 +78,7 @@ try {
                 console.log("> Generating your report...");
 
                 const artifactClient = artifact.create();
-                const report = 'dependency-check-report';
+                const report = 'dependency-report';
                 const rootDirectory = './'
                 const file = ['./dependency-report.html'];
                 const options = {
