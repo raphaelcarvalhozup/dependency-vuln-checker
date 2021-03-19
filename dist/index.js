@@ -45,9 +45,9 @@ try {
                     return;
                 }
 
-                console.log("> Generating your report...");
+                exec("ls -la" , (error, stdout, stderr) => { console.log(`${stdout}`)});
 
-                exec("ls" , (error, stdout, stderr) => { console.log(`${stdout}`)});
+                console.log("> Generating your report...");
 
                 const artifactClient = artifact.create();
                 const report = 'dependency-report';
