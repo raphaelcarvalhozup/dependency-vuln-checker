@@ -20,7 +20,18 @@ try {
         if (`${stdout}`.length != 0) {
 
             console.log("> Found pom.xml!");
-            console.log("> Actually we are not analysing Maven projects.");
+            console.log("> Analysing your Maven project...");
+
+            exec("mvn dependency-check:check" , (error, stdout, stderr) => {
+            
+                if (error) {
+                    console.log(`error: ${error.message}`);
+                    return;
+                }
+
+                exec("ls -la" , (error, stdout, stderr) => { console.log(`${stdout}`)});
+            
+            });
 
         }
 
