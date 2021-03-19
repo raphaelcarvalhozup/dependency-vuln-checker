@@ -5,7 +5,6 @@ module.exports =
 /***/ 6902:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const core = __nccwpck_require__(2236);
 const { exec } = __nccwpck_require__(3129);
 const artifact = __nccwpck_require__(9225);
 
@@ -20,12 +19,33 @@ try {
 
         if (`${stdout}`.length != 0) {
 
-            exec("curl -fSL https://github.com/jeremylong/DependencyCheck/releases/download/v6.1.2/dependency-check-6.1.2-release.zip -o dependency-check.zip && unzip dependency-check.zip && ./dependency-check/bin/dependency-check.sh -s pom.xml" , (error, stdout, stderr) => {
+            console.log("> Found pom.xml!");
+            console.log("> Actually we are not analysing Maven projects.");
+
+        }
+
+    });
+
+    exec("find . -name 'gradle.build'", (error, stdout, stderr) => {
+        
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+
+        if (`${stdout}`.length != 0) {
+
+            console.log("> Found gradle.build!");
+            console.log("> Analysing your Gradle project...")
+
+            exec("./gradlew dependencyCheckAnalyze" , (error, stdout, stderr) => {
                 
                 if (error) {
                     console.log(`error: ${error.message}`);
                     return;
                 }
+
+                console.log("> Generating your report...");
 
                 const artifactClient = artifact.create();
                 const report = 'dependency-check-report';
@@ -50,12 +70,17 @@ try {
 
         if (`${stdout}`.length != 0) {
 
+            console.log("> Found package.json!");
+            console.log("> Analysing your NPM project...")
+
             exec("sudo npm i --package-lock-only && sudo npm i -g npm-audit-html && npm audit --json | npm-audit-html --output dependency-report.html", (error, stdout, stderr) => {
                 
                 if (error) {
                     console.log(`error: ${error.message}`);
                     return;
                 }
+
+                console.log("> Generating your report...");
 
                 const artifactClient = artifact.create();
                 const report = 'dependency-check-report';

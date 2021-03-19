@@ -1,5 +1,6 @@
-name: 'Dependency Check'
-description: 'Dependency Check'
+name: 'Dependency Analyser'
+description: 'Analysis your project to find dependencies with known vulnerabilities'
+
 runs:
   using: 'node12'
   main: 'dist/index.js'
