@@ -35,7 +35,7 @@ try {
 
                 const artifactClient = artifact.create();
                 const report = 'dependency-report';
-                const rootDirectory = '/target'
+                const rootDirectory = 'target'
                 const file = ['dependency-check-report.html'];
                 const options = {
                     continueOnError: true
@@ -73,7 +73,7 @@ try {
 
                 const artifactClient = artifact.create();
                 const report = 'dependency-report';
-                const rootDirectory = '/target'
+                const rootDirectory = 'target'
                 const file = ['dependency-check-report.html'];
                 const options = {
                     continueOnError: true
