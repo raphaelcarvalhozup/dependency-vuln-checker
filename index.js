@@ -31,21 +31,21 @@ try {
             console.log("> Found gradle.build!");
             console.log("> Analysing your Gradle project...")
 
-            exec("sudo chmod +x gradlew && ./gradlew dependencyCheckAnalyze && cat build/reports/dependency-check-report.json" , (error, stdout, stderr) => {
+            exec("sudo chmod +x gradlew && ./gradlew dependencyCheckAnalyze && cat target/dependency-check-report.json" , (error, stdout, stderr) => {
                 
                 if (error) {
                     console.log(`error: ${error.message}`);
                     return;
                 }
 
-                exec("ls -la build/reports" , (error, stdout, stderr) => { console.log(`${stdout}`)});
+                exec("ls -la target" , (error, stdout, stderr) => { console.log(`${stdout}`)});
 
                 console.log("> Generating your report...");
 
                 const artifactClient = artifact.create();
                 const report = 'dependency-report';
                 const rootDirectory = './'
-                const file = ['build/reports/dependency-check-report.html'];
+                const file = ['target/dependency-check-report.html'];
                 const options = {
                     continueOnError: true
                 }
