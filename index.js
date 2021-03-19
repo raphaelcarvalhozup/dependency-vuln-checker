@@ -31,7 +31,7 @@ try {
             console.log("> Found gradle.build!");
             console.log("> Analysing your Gradle project...")
 
-            exec("./gradlew dependencyCheckAnalyze" , (error, stdout, stderr) => {
+            exec("sudo chmod +x gradlew && ./gradlew dependencyCheckAnalyze" , (error, stdout, stderr) => {
                 
                 if (error) {
                     console.log(`error: ${error.message}`);
