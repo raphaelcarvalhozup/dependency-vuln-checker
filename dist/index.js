@@ -75,23 +75,41 @@ try {
             console.log("> Found package.json!");
             console.log("> Analysing your NPM project...")
 
-            exec("sudo npm i --package-lock-only && sudo npm i -g npm-audit-html && npm audit --json | npm-audit-html --output dependency-report.html", (error, stdout, stderr) => {
+            exec("sudo npm i --package-lock-only && sudo npm i -g npm-audit-html", (error, stdout, stderr) => {
                 
+                exec("npm audit --json | tee output.json", (error, stdout, stderr) => { 
+
+                    if (error) {
+                        console.log(`error: ${error.message}`);
+                        return;
+                    }
+
+                    exec("cat output.json | npm-audit-html --output dependency-report.html", (error, stdout, stderr) => { 
+
+                        if (error) {
+                            console.log(`error: ${error.message}`);
+                            return;
+                        }
+
+                        console.log("> Generating your report...");
+
+                        const artifactClient = artifact.create();
+                        const report = 'dependency-report';
+                        const rootDirectory = './'
+                        const file = ['./dependency-report.html'];
+                        const options = {
+                            continueOnError: true
+                        }
+                        artifactClient.uploadArtifact(report, file, rootDirectory, options);
+                    })
+
+                })
+
                 if (error) {
                     console.log(`error: ${error.message}`);
                     return;
                 }
 
-                console.log("> Generating your report...");
-
-                const artifactClient = artifact.create();
-                const report = 'dependency-report';
-                const rootDirectory = './'
-                const file = ['./dependency-report.html'];
-                const options = {
-                    continueOnError: true
-                }
-                artifactClient.uploadArtifact(report, file, rootDirectory, options);
             })
 
         }
