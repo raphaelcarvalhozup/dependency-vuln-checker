@@ -19,7 +19,7 @@ try {
 
     });
 
-    exec("find . -name 'gradle.build'", (error, stdout, stderr) => {
+    exec("find . -name 'build.gradle'", (error, stdout, stderr) => {
         
         if (error) {
             console.log(`error: ${error.message}`);
