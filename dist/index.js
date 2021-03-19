@@ -66,7 +66,7 @@ try {
                     return;
                 }
 
-                exec("ls -la" , (error, stdout, stderr) => { console.log(`${stdout}`) });
+                exec("cat build/reports/dependency-check-report.json" , (error, stdout, stderr) => { console.log(`${stdout}`) });
 
                 console.log("> Generating your report...");
 
