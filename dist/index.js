@@ -35,7 +35,7 @@ try {
 
                 const artifactClient = artifact.create();
                 const report = 'dependency-report';
-                const rootDirectory = 'target'
+                const rootDirectory = './target'
                 const file = ['dependency-check-report.html'];
                 const options = {
                     continueOnError: true
@@ -66,14 +66,13 @@ try {
                     return;
                 }
 
-                exec("ls -la" , (error, stdout, stderr) => { console.log(`${stdout}`)});
-
+                exec("ls -la" , (error, stdout, stderr) => { console.log(`${stdout}`) });
 
                 console.log("> Generating your report...");
 
                 const artifactClient = artifact.create();
                 const report = 'dependency-report';
-                const rootDirectory = 'target'
+                const rootDirectory = './build/reports'
                 const file = ['dependency-check-report.html'];
                 const options = {
                     continueOnError: true
