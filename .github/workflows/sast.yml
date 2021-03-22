@@ -1,0 +1,16 @@
+name: Security
+
+on: push
+
+jobs:
+  horusec:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Horusec Analysis
+      run: |
+        curl -fsSL https://horusec.io/bin/install.sh | bash 
+        horusec start -p ./ -G true
