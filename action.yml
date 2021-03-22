@@ -1,13 +1,6 @@
-name: 'Hello World'
-description: 'Greet someone'
-inputs:
-  who-to-greet:
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  time: 
-    description: 'The time we greeted you'
+name: 'Dependency Analyser'
+description: 'Analysis your project to find dependencies with known vulnerabilities'
+
 runs:
   using: 'node12'
   main: 'dist/index.js'
