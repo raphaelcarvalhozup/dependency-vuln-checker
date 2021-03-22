@@ -13,7 +13,7 @@ This action checks if your application uses dependencies with know vulnerabilite
 
 ## Usage
 
-```
+```yaml
 - name: Dependency Vuln Checker
   uses: guilhermemarimzup/dependency-vuln-checker@v1
 ```
