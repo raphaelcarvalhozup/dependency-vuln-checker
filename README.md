@@ -33,12 +33,12 @@ If you are using [Maven](https://maven.apache.org/) or [Gradle](https://gradle.o
     <groupId>org.owasp</groupId>
     <artifactId>dependency-check-maven</artifactId>
     <version>6.1.2</version>
-	<configuration>
-	    <formats>
-			<format>HTML</format>
-			<format>JSON</format>
-		</formats>
-	</configuration>
+    <configuration>
+        <formats>
+            <format>HTML</format>
+            <format>JSON</format>
+        </formats>
+    </configuration>
     <executions>
         <execution>
             <goals>
