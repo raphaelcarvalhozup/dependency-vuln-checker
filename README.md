@@ -1,18 +1,18 @@
 <p align="center">
 <a href="https://github.com/guilhermemarimzup/dependency-vuln-checker">
-  <img src="./images/logo.png" width="300" />
+  <img src="./images/logo.png" width="250" />
 </a>
 
 <h1 align="center">Dependency Vuln Checker</h1>
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-This action checks if your application uses dependencies with know vulnerabilites. Actually it supports applications that use Maven, Gradle and npm as package manager. Under the hood, it uses [OWASP Dependency-Check](https://owasp.org/www-project-dependency-check/) and [npm audit](https://docs.npmjs.com/cli/v7/commands/npm-audit) to check the dependencies.
+This action checks if your application uses dependencies with know vulnerabilities. Actually it supports applications that use Maven, Gradle, and npm as the package manager. Under the hood, it uses [OWASP Dependency-Check](https://owasp.org/www-project-dependency-check/) and [npm audit](https://docs.npmjs.com/cli/v7/commands/npm-audit) to check the dependencies.
 
 ---
 
 <h2>
-    <img src="./images/usage.svg" alt="Usage icon" width="40px"/> Usage
+    <img src="./images/usage.svg" alt="Usage icon" width="25px"/> Usage
 </h2>
 
 ```yaml
@@ -21,7 +21,7 @@ This action checks if your application uses dependencies with know vulnerabilite
 ```
 
 <h3>
-    <img src="./images/pre-requisites.svg" alt="Pre-requisites icon" width="40px"/> Pre-requisites
+    <img src="./images/pre-requisites.svg" alt="Pre-requisites icon" width="25px"/> Pre-requisites
 </h3>
 
 If you are using [Maven](https://maven.apache.org/) or [Gradle](https://gradle.org/) as your package manager, you must have to add [OWASP dependency-check plugin](https://jeremylong.github.io/DependencyCheck/modules.html) in your dependency manager file because the results will be much more accurate.
@@ -66,7 +66,7 @@ Take care with your `.gitignore` file, because this action needs `gradlew` file 
 ---
 
 <h2>
-    <img src="./images/github-actions-logo.svg" alt="GitHub Actions icon" width="40px"/> Workflow Example
+    <img src="./images/github-actions-logo.svg" alt="GitHub Actions icon" width="25px"/> Workflow Example
 </h2>
  
 
@@ -89,7 +89,7 @@ jobs:
 ---
 
 <h2>
-    <img src="./images/licenses.svg" alt="Licenses icon" width="40px"/> Licenses
+    <img src="./images/licenses.svg" alt="Licenses icon" width="25px"/> Licenses
 </h2>
 
 [Dependency Vuln Checker](https://github.com/guilhermemarimzup/dependency-vuln-checker) project icons made by [Freepik](https://www.flaticon.com/authors/freepik), [Dave Gandy](https://www.flaticon.com/authors/dave-gandy) and [Darius Dan](https://www.flaticon.com/authors/darius-dan) from [Flaticon](https://www.flaticon.com/). The source code is licensed under [Apache-2.0](https://opensource.org/licenses/Apache-2.0).
