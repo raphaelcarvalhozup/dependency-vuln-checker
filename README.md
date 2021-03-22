@@ -11,6 +11,15 @@ This action checks if your application uses dependencies with know vulnerabilite
 
 ---
 
+## Usage
+
+```
+- name: Dependency Vuln Checker
+  uses: guilhermemarimzup/dependency-vuln-checker@v1
+```
+
+---
+
 ## Licenses
 
 [Dependency Vuln Checker](https://github.com/guilhermemarimzup/dependency-vuln-checker) project icons made by [Freepik](https://www.flaticon.com/authors/freepik) from [Flaticon](https://www.flaticon.com/). The source code is licensed under [Apache-2.0](https://opensource.org/licenses/Apache-2.0).
