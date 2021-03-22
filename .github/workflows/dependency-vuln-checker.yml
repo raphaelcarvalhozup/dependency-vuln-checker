@@ -1,0 +1,14 @@
+name: Dependency Vuln Checker
+
+on: push
+
+jobs:
+  dependency-vuln-checker:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Dependency-Vuln-Checker
+      uses: guilhermemarimzup/dependency-vuln-checker@v1
