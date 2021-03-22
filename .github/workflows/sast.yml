@@ -13,4 +13,4 @@ jobs:
     - name: Horusec Analysis
       run: |
         curl -fsSL https://horusec.io/bin/install.sh | bash 
-        horusec start -p ./ -G true
+        horusec start -p ./ -G true --ignore "dist/index.js"
