@@ -86,6 +86,9 @@ jobs:
     - name: Dependency-Vuln-Checker
       uses: guilhermemarimzup/dependency-vuln-checker@v1
 ```
+
+<img src="images/action-running.gif" />
+
 ---
 
 <h2>
