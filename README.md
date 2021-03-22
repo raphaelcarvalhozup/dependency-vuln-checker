@@ -7,6 +7,8 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
+This action checks if your application uses dependencies with know vulnerabilites. Actually it supports applications that use Maven, Gradle and npm as package manager. Under the hood, it uses [OWASP Dependency-Check](https://owasp.org/www-project-dependency-check/) and [npm audit](https://docs.npmjs.com/cli/v7/commands/npm-audit) to check the dependencies.
+
 ---
 
 ## Licenses
