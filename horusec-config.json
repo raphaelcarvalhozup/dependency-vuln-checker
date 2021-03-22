@@ -26,9 +26,7 @@
   "horusecCliEnableGitHistoryAnalysis": false,
   "horusecCliEnableInformationSeverity": false,
   "horusecCliFalsePositiveHashes": [],
-  "horusecCliFilesOrPathsToIgnore": [
-    "**/dist/index.js"
-  ],
+  "horusecCliFilesOrPathsToIgnore": [],
   "horusecCliFilterPath": "",
   "horusecCliHeaders": {},
   "horusecCliHorusecApiUri": "",
